@@ -12,3 +12,12 @@ Para lograr este objetivo se plantea implementar una estrategia de mejora tecnol
 
 ## **COSTO BENEFICIO:** 
 El costo total de implementación de esta estrategia es de 400 KUSD. Se estima que al cumplir este objetivo en la fecha propuesta, la facturación adicional diaria será de USD 16 500, lo cual sumaria 1.485 Millones de dólares de facturación adicional solamente durante la próxima temporada (del 1 de octubre al 31 de diciembre del 2024- aproximadamente 90 días), posterior a la fecha de cumplimiento del objetivo.
+
+# **INDICADOR**
+![image](https://github.com/user-attachments/assets/6d4bd19c-982c-4141-9f4c-69719861ff92)
+
+# **DASHBOARD**
+![image](https://github.com/user-attachments/assets/243c9fc5-9f0a-422f-aaf6-b52c62fe2911)
+
+# **REPORTE**
+![image](https://github.com/user-attachments/assets/7d7e8904-1b5d-48f5-92a6-ddca9268a92c)
