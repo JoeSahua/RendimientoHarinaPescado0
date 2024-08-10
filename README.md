@@ -84,21 +84,23 @@ Para ello se usó el gráfico de barras, el cual permite una comparación visual
 ## **PREGUNTA 8** 
 ![image](https://github.com/user-attachments/assets/06aa246f-1a98-481b-9eec-bf736424d896)
 
-La pregunta número 8 busca determinar el porcentaje del total de días de producción en 2023 en los que no se alcanzó el rendimiento mínimo esperado del 23.5%. Además, se elaboraron dos gráficos de barras independientes y similares para cada una de las dos plantas, lo que permite visualizar las diferencias de rendimiento entre ellas. Los gráficos de columnas se colorearon en rojo, amarillo y verde, representando los días en los que el indicador estuvo por debajo del 23.5%, los días en los que se situó entre el 23.5% y el 24%, y los días en los que se alcanzó el 24%, respectivamente.
+La pregunta número 8 busca determinar el porcentaje del total de días de producción en 2023 en los que no se alcanzó el rendimiento mínimo esperado del **23.5%**. Además, se elaboraron dos gráficos de barras independientes y similares para cada una de las dos plantas, lo que permite visualizar las diferencias de rendimiento entre ellas. Los gráficos de columnas se colorearon en rojo, amarillo y verde, representando los días en los que el indicador estuvo por debajo del **23.5%**, los días en los que se situó entre el **23.5%** y el **24%**, y los días en los que se alcanzó el **24%**, respectivamente.
 
 ## **PREGUNTA 9** 
 ![image](https://github.com/user-attachments/assets/c007cf4e-de46-426a-a478-2d5877d35736)
 
 La pregunta número 9 tiene como objetivo identificar el impacto que tuvo el modificar el proceso de "ENFRIAMIENTO", al comparar el producto del proceso antiguo (Harina de pescado), con el generado a partir del nuevo (Harina de Pescado P2), y evaluar la diferencia en porcentaje del rendimiento obtenido en cada uno de estos.
 Se usaron 2 tipos de gráficos:
-Tabla: Permite visualizar el detalle por mes, así como también diferenciar los productos a partir de un formato condicional
-Tarjeta: Hace "highlight" de los indicadores, permitiendo realizar una comparación visual rápida entre estos.
+**Tabla**: Permite visualizar el detalle por mes, así como también diferenciar los productos a partir de un formato condicional
+**Tarjeta**: Hace "highlight" de los indicadores, permitiendo realizar una comparación visual rápida entre estos.
 
 ## **PREGUNTA 10** 
 ![image](https://github.com/user-attachments/assets/27359f14-6251-4cfb-877c-ac647c973aed)
 
 El objetivo de la pregunta 10 es identificar si existe una tendencia en la producción lo largo de la semana, esto con la finalidad de evaluar día por día las razones del alto/bajo rendimiento obtenido, replicar mejores prácticas y realizar ajustes en caso aplique.
 Se usaron 2 tipos de gráficos:
-Lineal: Muestra perfectamente la tendencia al conectar puntos de datos de manera continua, facilitando la visualización de cambios y patrones a lo largo del tiempo
-Tabla: Haciendo uso del formato condicional, permite comparar fácilmente los días de mayor producción de cada producto, evaluando si hay días TOP de producción en común.
+
+
+**Lineal**: Muestra perfectamente la tendencia al conectar puntos de datos de manera continua, facilitando la visualización de cambios y patrones a lo largo del tiempo  
+**Tabla**: Haciendo uso del formato condicional, permite comparar fácilmente los días de mayor producción de cada producto, evaluando si hay días TOP de producción en común.
 
