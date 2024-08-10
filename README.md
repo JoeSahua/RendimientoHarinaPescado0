@@ -27,13 +27,23 @@ El costo total de implementación de esta estrategia es de 400 KUSD. Se estima q
 # **PANTALLAS DE APLICACIÓN**
 
 ## **PREGUNTA 1** 
+![image](https://github.com/user-attachments/assets/a1b9c2b1-b07d-43fb-abd7-a5f396e3a6af)
 ## **PREGUNTA 2** 
+![image](https://github.com/user-attachments/assets/4767631f-6f13-4ad5-baae-71b6c3a2cd99)
 ## **PREGUNTA 3** 
+![image](https://github.com/user-attachments/assets/cf43cbb2-4f38-4f18-aade-afda08bcd02a)
 ## **PREGUNTA 4** 
+![image](https://github.com/user-attachments/assets/c5085394-c857-4e3a-a77f-41b7f464a70f)
 ## **PREGUNTA 5** 
+![image](https://github.com/user-attachments/assets/4cb26bc5-4c1c-4f65-96a2-49b3f8ad038e)
 ## **PREGUNTA 6** 
+![image](https://github.com/user-attachments/assets/dfc4769f-ee88-441b-9903-945cd4e655a1)
 ## **PREGUNTA 7** 
+![image](https://github.com/user-attachments/assets/7ef4dab4-8dcf-41a1-a7a5-1e8b670a61d2)
 ## **PREGUNTA 8** 
+![image](https://github.com/user-attachments/assets/06aa246f-1a98-481b-9eec-bf736424d896)
 ## **PREGUNTA 9** 
+![image](https://github.com/user-attachments/assets/c007cf4e-de46-426a-a478-2d5877d35736)
 ## **PREGUNTA 10** 
+![image](https://github.com/user-attachments/assets/27359f14-6251-4cfb-877c-ac647c973aed)
 
