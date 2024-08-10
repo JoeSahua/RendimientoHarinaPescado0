@@ -21,3 +21,19 @@ El costo total de implementación de esta estrategia es de 400 KUSD. Se estima q
 
 # **REPORTE**
 ![image](https://github.com/user-attachments/assets/7d7e8904-1b5d-48f5-92a6-ddca9268a92c)
+
+# **CREACIÓN DE TABLAS**
+
+# **PANTALLAS DE APLICACIÓN**
+
+## **PREGUNTA 1** 
+## **PREGUNTA 2** 
+## **PREGUNTA 3** 
+## **PREGUNTA 4** 
+## **PREGUNTA 5** 
+## **PREGUNTA 6** 
+## **PREGUNTA 7** 
+## **PREGUNTA 8** 
+## **PREGUNTA 9** 
+## **PREGUNTA 10** 
+
