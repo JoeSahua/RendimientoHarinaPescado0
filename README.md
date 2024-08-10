@@ -24,6 +24,11 @@ El costo total de implementación de esta estrategia es de 400 KUSD. Se estima q
 
 # **CREACIÓN DE TABLAS**
 
+Para la creación de tablas y datos que alimentan el dashboard en POWER BI, se usó la aplicación de SQL Server Management (Ver archivo "SQL_Script.sql").
+Para ello se usaron los datos ubicados en los archivos "datos_2023.xlsx" y "datos_2024.xlsx".
+
+![image](https://github.com/user-attachments/assets/3d4710b7-c455-4b86-bea2-6ae7c164a16e)
+
 # **PANTALLAS DE APLICACIÓN**
 
 ## **PREGUNTA 1** 
