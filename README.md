@@ -46,7 +46,7 @@ Utilizamos una tabla que lo ordenamos de manera decreciente porque las diferenci
 ## **PREGUNTA 3** 
 ![image](https://github.com/user-attachments/assets/cf43cbb2-4f38-4f18-aade-afda08bcd02a)
 
-La pregunta número 3 tiene como objetivo determinar el promedio del índice diario de producción de harina de pescado obtenido durante las temporadas **2023-T1**, **2023-T2** y **2024-T1**. Este análisis es crucial para evaluar si el rendimiento de la producción se encuentra dentro de los niveles esperados o si hay una disminución significativa que pueda requerir acciones correctivas. Utilizamos una tabla que presenta los rendimientos de cada una de las temporadas seleccionadas, junto con un cuadro que muestra el promedio general de las mismas.
+La pregunta número 3 tiene como objetivo determinar el promedio del índice diario de producción de harina de pescado obtenido durante las temporadas **2023-T1**, **2023-T2** y **2024-T1**. Este análisis es crucial para evaluar si el rendimiento de la producción se encuentra dentro de los niveles esperados o si hay una disminución significativa que pueda requerir acciones correctivas. Utilizamos una tabla que presenta los rendimientos de cada una de las temporadas seleccionadas, junto con una tarjeta que muestra el promedio general de las mismas.
  
 ## **PREGUNTA 4** 
 ![image](https://github.com/user-attachments/assets/c5085394-c857-4e3a-a77f-41b7f464a70f)
@@ -65,7 +65,7 @@ temporadas.
 ## **PREGUNTA 6** 
 ![image](https://github.com/user-attachments/assets/dfc4769f-ee88-441b-9903-945cd4e655a1)
 
-la pregunta número 6 tiene como objetivo identificar cual de las plantas de la empresa ABC (Oeste o Norte)
+La pregunta número 6 tiene como objetivo identificar cual de las plantas de la empresa ABC (Oeste o Norte)
 cuenta con un mayor rendimiento de harina de pescado para las temporadas 2023-1 y 2023-2.
 Para responder esta pregunta elegimos un grafico de tabla ordenada de manera decreciente que nos
 facilita determinar cual de las plantas mencionadas cuenta con un mayor indicador para el 2023.
