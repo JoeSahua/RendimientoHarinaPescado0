@@ -98,9 +98,9 @@ Se usaron 2 tipos de gráficos:
 ![image](https://github.com/user-attachments/assets/27359f14-6251-4cfb-877c-ac647c973aed)
 
 El objetivo de la pregunta 10 es identificar si existe una tendencia en la producción lo largo de la semana, esto con la finalidad de evaluar día por día las razones del alto/bajo rendimiento obtenido, replicar mejores prácticas y realizar ajustes en caso aplique.
-Se usaron 2 tipos de gráficos:
 
 
+Se usaron 2 tipos de gráficos:  
 **Lineal**: Muestra perfectamente la tendencia al conectar puntos de datos de manera continua, facilitando la visualización de cambios y patrones a lo largo del tiempo  
 **Tabla**: Haciendo uso del formato condicional, permite comparar fácilmente los días de mayor producción de cada producto, evaluando si hay días TOP de producción en común.
 
