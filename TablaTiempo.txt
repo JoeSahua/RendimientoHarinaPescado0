@@ -1,0 +1,16 @@
+Tiempo = ADDCOLUMNS( 
+CALENDARAUTO(),
+"anio",YEAR([Date]),
+"mes",MONTH([Date]),
+"anio_mes", YEAR([Date]) & "-" & RIGHT(CONVERT(100+MONTH([Date]),STRING),2),
+"anio_trimestre", YEAR([Date]) & "-" & QUARTER([Date]),
+"dia",DAY([Date]),
+"mes_nombre",RIGHT(CONVERT(100+MONTH([Date]),STRING),2) & "-" & FORMAT([Date],"MMMM"),
+"dia_semana_nombre", RIGHT(CONVERT(100+WEEKDAY([Date]),STRING),2) & "-" & FORMAT([Date],"dddd"),
+"trimestre",QUARTER([Date]),
+"Temporada", IF(OR(OR(MONTH([Date])=4,MONTH([Date])=5),MONTH([Date])=6),YEAR([Date])&"-T1",
+                IF(OR(OR(MONTH([Date])=12,MONTH([Date])=10),MONTH([Date])=11),YEAR([Date])&"-T2",
+                    YEAR([Date])&"-T0"
+                )
+            )
+)
