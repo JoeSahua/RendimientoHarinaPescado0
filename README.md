@@ -33,24 +33,29 @@ Para ello se usaron los datos ubicados en los archivos "datos_2023.xlsx" y "dato
 
 ## **PREGUNTA 1** 
 ![image](https://github.com/user-attachments/assets/a1b9c2b1-b07d-43fb-abd7-a5f396e3a6af)
+
 La pregunta número 1 tiene como objetivo definir si es que existe alguna estacionalidad respecto al día de la semana con mejores rendimientos para que sea un punto de partida y así analizar otras variables que puedan estar influyendo al indicador.
 Utilizamos una tabla que ordenamos de manera decreciente porque las diferencias entre los valores no eran tan notorias, así como colores de diversa intensidad.
 
 ## **PREGUNTA 2** 
 ![image](https://github.com/user-attachments/assets/4767631f-6f13-4ad5-baae-71b6c3a2cd99)
+
 La pregunta número 2 tiene como objetivo obtener una lista de los diez mejores días de producción para identificar y clasificar los días más destacados.
 Utilizamos una tabla que lo ordenamos de manera decreciente porque las diferencias entre los valores no eran tan notoria, así como colores de diversa intensidad.
 
 ## **PREGUNTA 3** 
 ![image](https://github.com/user-attachments/assets/cf43cbb2-4f38-4f18-aade-afda08bcd02a)
+
 La pregunta número 3 tiene como objetivo determinar el promedio del índice diario de producción de harina de pescado obtenido durante las temporadas **2023-T1**, **2023-T2** y **2024-T1**. Este análisis es crucial para evaluar si el rendimiento de la producción se encuentra dentro de los niveles esperados o si hay una disminución significativa que pueda requerir acciones correctivas. Utilizamos una tabla que presenta los rendimientos de cada una de las temporadas seleccionadas, junto con un cuadro que muestra el promedio general de las mismas.
  
 ## **PREGUNTA 4** 
 ![image](https://github.com/user-attachments/assets/c5085394-c857-4e3a-a77f-41b7f464a70f)
+
 La pregunta número 4 busca identificar cuál fue el mes del año 2023 con el mayor índice diario de rendimiento de producción de harina de pescado. Este tipo de análisis es importante para entender en qué momento del año se alcanzan los mejores niveles de eficiencia en la producción. Para responder a la pregunta, se utilizó una visualización que incluye una tabla de meses y porcentaje de rendimiento para cada mes, destacando que el rendimiento más alto se registró en octubre con un 23.004%
 
 ## **PREGUNTA 5** 
 ![image](https://github.com/user-attachments/assets/4cb26bc5-4c1c-4f65-96a2-49b3f8ad038e)
+
 la pregunta número 5 tiene como objetivo analizar el comportamiento entre temporadas del indicador
 de rendimiento de harina de pescado para la temporada **2023-1** y **2024 -1**.
 Para responder a esta pregunta optamos por un grafico de tabla ordenado de manera decreciente para facilitar el
@@ -59,6 +64,7 @@ temporadas.
 
 ## **PREGUNTA 6** 
 ![image](https://github.com/user-attachments/assets/dfc4769f-ee88-441b-9903-945cd4e655a1)
+
 la pregunta número 6 tiene como objetivo identificar cual de las plantas de la empresa ABC (Oeste o Norte)
 cuenta con un mayor rendimiento de harina de pescado para las temporadas 2023-1 y 2023-2.
 Para responder esta pregunta elegimos un grafico de tabla ordenada de manera decreciente que nos
@@ -66,15 +72,18 @@ facilita determinar cual de las plantas mencionadas cuenta con un mayor indicado
 
 ## **PREGUNTA 7** 
 ![image](https://github.com/user-attachments/assets/7ef4dab4-8dcf-41a1-a7a5-1e8b670a61d2)
+
 La pregunta 7 tiene como finalidad mostrar los clientes a los que más toneladas de harina de pescado se vende, esto don el objetivo de identificar a los clientes más valiosos o rentables, permitiendo enfocar estrategias comerciales y de fidelización en estos.
 Para ello se usó el gráfico de barras, el cual permite una comparación visual rápida de las ventas realizadas al TOP 5 de clientes a partir de la longitud de las barras.
 
 ## **PREGUNTA 8** 
 ![image](https://github.com/user-attachments/assets/06aa246f-1a98-481b-9eec-bf736424d896)
+
 La pregunta número 8 busca determinar el porcentaje del total de días de producción en 2023 en los que no se alcanzó el rendimiento mínimo esperado del 23.5%. Además, se elaboraron dos gráficos de barras independientes y similares para cada una de las dos plantas, lo que permite visualizar las diferencias de rendimiento entre ellas. Los gráficos de columnas se colorearon en rojo, amarillo y verde, representando los días en los que el indicador estuvo por debajo del 23.5%, los días en los que se situó entre el 23.5% y el 24%, y los días en los que se alcanzó el 24%, respectivamente.
 
 ## **PREGUNTA 9** 
 ![image](https://github.com/user-attachments/assets/c007cf4e-de46-426a-a478-2d5877d35736)
+
 La pregunta número 9 tiene como objetivo identificar el impacto que tuvo el modificar el proceso de "ENFRIAMIENTO", al comparar el producto del proceso antiguo (Harina de pescado), con el generado a partir del nuevo (Harina de Pescado P2), y evaluar la diferencia en porcentaje del rendimiento obtenido en cada uno de estos.
 Se usaron 2 tipos de gráficos:
 Tabla: Permite visualizar el detalle por mes, así como también diferenciar los productos a partir de un formato condicional
@@ -82,6 +91,7 @@ Tarjeta: Hace "highlight" de los indicadores, permitiendo realizar una comparaci
 
 ## **PREGUNTA 10** 
 ![image](https://github.com/user-attachments/assets/27359f14-6251-4cfb-877c-ac647c973aed)
+
 El objetivo de la pregunta 10 es identificar si existe una tendencia en la producción lo largo de la semana, esto con la finalidad de evaluar día por día las razones del alto/bajo rendimiento obtenido, replicar mejores prácticas y realizar ajustes en caso aplique.
 Se usaron 2 tipos de gráficos:
 Lineal: Muestra perfectamente la tendencia al conectar puntos de datos de manera continua, facilitando la visualización de cambios y patrones a lo largo del tiempo
