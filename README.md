@@ -90,8 +90,10 @@ La pregunta número 8 busca determinar el porcentaje del total de días de produ
 ![image](https://github.com/user-attachments/assets/c007cf4e-de46-426a-a478-2d5877d35736)
 
 La pregunta número 9 tiene como objetivo identificar el impacto que tuvo el modificar el proceso de "ENFRIAMIENTO", al comparar el producto del proceso antiguo (Harina de pescado), con el generado a partir del nuevo (Harina de Pescado P2), y evaluar la diferencia en porcentaje del rendimiento obtenido en cada uno de estos.
-Se usaron 2 tipos de gráficos:
-**Tabla**: Permite visualizar el detalle por mes, así como también diferenciar los productos a partir de un formato condicional
+
+
+Se usaron 2 tipos de gráficos:  
+**Tabla**: Permite visualizar el detalle por mes, así como también diferenciar los productos a partir de un formato condicional  
 **Tarjeta**: Hace "highlight" de los indicadores, permitiendo realizar una comparación visual rápida entre estos.
 
 ## **PREGUNTA 10** 
