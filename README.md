@@ -31,6 +31,11 @@ Para ello se usaron los datos ubicados en los archivos "datos_2023.xlsx" y "dato
 
 # **PANTALLAS DE APLICACIÓN**
 
+## **MANEJO DE DATOS DATE** 
+Para gestionar los datos de tipo Fecha, se creó una Tabla Tiempo que permitió ajustar los períodos de análisis al construir las visualizaciones. Dado que el negocio se mide por temporadas, se incluyó una columna para clasificar las temporadas dentro de un año, lo cual fue un aspecto clave para utilizar selectores y responder las diferentes preguntas.
+
+![image](https://github.com/user-attachments/assets/d6551450-5e1f-4ba6-a61b-eb9893093757)
+
 ## **PREGUNTA 1** 
 ![image](https://github.com/user-attachments/assets/a1b9c2b1-b07d-43fb-abd7-a5f396e3a6af)
 
