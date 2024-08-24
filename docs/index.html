@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casos de Negocio</title>
+</head>
+<body>
+    <h1>CASO DE NEGOCIO</h1>
 
+    <h2>OBJETIVO:</h2>
+    <p>Desde la Temporada 1 del 2023 (1 de Abril al 30 de Junio), la empresa 123 cuenta con INDICADOR DIARIO PROMEDIO DE RENDIMIENTO DE HARINA DE PESCADO del 23% (semáforo rojo), la nueva gerencia se ha propuesto incrementar dicho indicador a 24% (semáforo verde) para el 1 de octubre de 2024.</p>
+
+    <h2>ESTRATEGIA:</h2>
+    <p>Para lograr este objetivo se plantea implementar una estrategia de mejora tecnológica en el área de "ENFRIAMIENTO" logrando incrementar en promedio 15 TON de producción de Harina de pescado diaria, de una producción promedio de harina 345 TON que corresponde a una cantidad promedio de 1500 TON de materia prima diaria, sin incrementar el requerimiento de materia prima. Se realizará un product update.</p>
+
+    <h2>COSTO BENEFICIO:</h2>
+    <p>El costo total de implementación de esta estrategia es de 400 KUSD. Se estima que al cumplir este objetivo en la fecha propuesta, la facturación adicional diaria será de USD 16 500, lo cual sumaría 1.485 millones de dólares de facturación adicional solamente durante la próxima temporada (del 1 de octubre al 31 de diciembre del 2024 - aproximadamente 90 días), posterior a la fecha de cumplimiento del objetivo.</p>
+
+    <h2>INDICADOR</h2>
+    <img src="https://github.com/user-attachments/assets/6d4bd19c-982c-4141-9f4c-69719861ff92" alt="Indicador">
+
+    <h2>DASHBOARD</h2>
+    <img src="https://github.com/user-attachments/assets/243c9fc5-9f0a-422f-aaf6-b52c62fe2911" alt="Dashboard">
+
+    <h2>REPORTE</h2>
+    <img src="https://github.com/user-attachments/assets/7d7e8904-1b5d-48f5-92a6-ddca9268a92c" alt="Reporte">
+
+    <h2>CREACIÓN DE TABLAS</h2>
+    <p>Para la creación de tablas y datos que alimentan el dashboard en POWER BI, se usó la aplicación de SQL Server Management (ver archivo "SQL_Script.sql"). Para ello se usaron los datos ubicados en los archivos "datos_2023.xlsx" y "datos_2024.xlsx".</p>
+
+    <img src="https://github.com/user-attachments/assets/3d4710b7-c455-4b86-bea2-6ae7c164a16e" alt="Creación de Tablas">
+
+    <h2>CONSIDERACIONES POWER BI</h2>
+
+    <h3>MANEJO DE DATOS DATE</h3>
+    <p>Para gestionar los datos de tipo Fecha, se creó una Tabla Tiempo que permitió ajustar los períodos de análisis al construir las visualizaciones. Dado que el negocio se mide por temporadas, se incluyó una columna para clasificar las temporadas dentro de un año, lo cual fue un aspecto clave para utilizar selectores y responder las diferentes preguntas. Se adjunta el código en el archivo TablaTiempo.txt.</p>
+
+    <img src="https://github.com/user-attachments/assets/d6551450-5e1f-4ba6-a61b-eb9893093757" alt="Tabla Tiempo">
+
+    <h2>PANTALLAS DE APLICACIÓN</h2>
+
+    <h3>PREGUNTA 1</h3>
+    <img src="https://github.com/user-attachments/assets/a1b9c2b1-b07d-43fb-abd7-a5f396e3a6af" alt="Pregunta 1">
+    <p>La pregunta número 1 tiene como objetivo definir si es que existe alguna estacionalidad respecto al día de la semana con mejores rendimientos...</p>
+
+    <h3>PREGUNTA 2</h3>
+    <img src="https://github.com/user-attachments/assets/4767631f-6f13-4ad5-baae-71b6c3a2cd99" alt="Pregunta 2">
+    <p>La pregunta número 2 tiene como objetivo obtener una lista de los diez mejores días de producción...</p>
+
+    <h3>PREGUNTA 3</h3>
+    <img src="https://github.com/user-attachments/assets/cf43cbb2-4f38-4f18-aade-afda08bcd02a" alt="Pregunta 3">
+    <p>La pregunta número 3 tiene como objetivo determinar el promedio del índice diario de producción de harina de pescado obtenido durante las temporadas...</p>
+
+    <h3>PREGUNTA 4</h3>
+    <img src="https://github.com/user-attachments/assets/c5085394-c857-4e3a-a77f-41b7f464a70f" alt="Pregunta 4">
+    <p>La pregunta número 4 busca identificar cuál fue el mes del año 2023 con el mayor índice diario de rendimiento de producción de harina de pescado...</p>
+
+    <h3>PREGUNTA 5</h3>
+    <img src="https://github.com/user-attachments/assets/4cb26bc5-4c1c-4f65-96a2-49b3f8ad038e" alt="Pregunta 5">
+    <p>La pregunta número 5 tiene como objetivo analizar el comportamiento entre temporadas del indicador de rendimiento de harina de pescado...</p>
+
+    <h3>PREGUNTA 6</h3>
+    <img src="https://github.com/user-attachments/assets/dfc4769f-ee88-441b-9903-945cd4e655a1" alt="Pregunta 6">
+    <p>La pregunta número 6 tiene como objetivo identificar cuál de las plantas de la empresa ABC (Oeste o Norte) cuenta con un mayor rendimiento de harina de pescado...</p>
+
+    <h3>PREGUNTA 7</h3>
+    <img src="https://github.com/user-attachments/assets/7ef4dab4-8dcf-41a1-a7a5-1e8b670a61d2" alt="Pregunta 7">
+    <p>La pregunta número 7 tiene como finalidad mostrar los clientes a los que más toneladas de harina de pescado se vende...</p>
+
+    <h3>PREGUNTA 8</h3>
+    <img src="https://github.com/user-attachments/assets/06aa246f-1a98-481b-9eec-bf736424d896" alt="Pregunta 8">
+    <p>La pregunta número 8 busca determinar el porcentaje del total de días de producción en 2023 en los que no se alcanzó el rendimiento mínimo esperado...</p>
+
+    <h3>PREGUNTA 9</h3>
+    <img src="https://github.com/user-attachments/assets/c007cf4e-de46-426a-a478-2d5877d35736" alt="Pregunta 9">
+    <p>La pregunta número 9 tiene como objetivo identificar el impacto que tuvo el modificar el proceso de "ENFRIAMIENTO"...</p>
+
+    <h3>PREGUNTA 10</h3>
+    <img src="https://github.com/user-attachments/assets/27359f14-6251-4cfb-877c-ac647c973aed" alt="Pregunta 10">
+    <p>El objetivo de la pregunta 10 es identificar si existe una tendencia en la producción a lo largo de la semana...</p>
+
+    <h2>Link hacia el archivo Power BI</h2>
+    <p><a href="https://app.powerbi.com/Redirect?action=OpenReport&appId=3ff26fc3-5194-40e4-824b-f38f5cf4fd7e&reportObjectId=e7f42273-3e56-4873-bcdf-7054b5ce2d9e&ctid=e0bf63d0-17d1-45b7-afea-f3dfa61da6e7&reportPage=ReportSection&pbi_source=appShareLink&portalSessionId=e98eb46c-6a07-42e1-b079-939dfb6c86f0">Ver Reporte Power BI</a></p>
+</body>
+</html>
