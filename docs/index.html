@@ -369,24 +369,24 @@
             	<h4> </h4>
 		<pre>
 	SELECT 
-			    CASE 
-			        WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Sunday' THEN '01-domingo'
-			        WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Monday' THEN '02-lunes'
-			        WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Tuesday' THEN '03-martes'
-			        WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Wednesday' THEN '04-miercoles'
-			        WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Thursday' THEN '05-jueves'
-			        WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Friday' THEN '06-viernes'
-			        WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Saturday' THEN '07-sábado'
-			    END AS Dia_Semana,
-			    convert(decimal(12,3), sum(convert(decimal(12,4),cantidad_producida)) / sum(convert(decimal(12,4),cantidad_procesada)) * 100) AS Rendimiento_Harina_Pescado
-			FROM 
-			    [grupo03].[produccion_diaria]
-			WHERE 
-			    AnioTemp = '2024-T1'
-			GROUP BY 
-			     DATENAME(WEEKDAY, Fecha_Produccion)
-			ORDER BY 
-			    Rendimiento_Harina_Pescado DESC;
+		CASE 
+		    WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Sunday' THEN '01-domingo'
+		    WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Monday' THEN '02-lunes'
+		    WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Tuesday' THEN '03-martes'
+		    WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Wednesday' THEN '04-miercoles'
+		    WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Thursday' THEN '05-jueves'
+		    WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Friday' THEN '06-viernes'
+		    WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Saturday' THEN '07-sábado'
+		END AS Dia_Semana,
+		convert(decimal(12,3), sum(convert(decimal(12,4),cantidad_producida)) / sum(convert(decimal(12,4),cantidad_procesada)) * 100) AS Rendimiento_Harina_Pescado
+		FROM 
+		    [grupo03].[produccion_diaria]
+		WHERE 
+		    AnioTemp = '2024-T1'
+		GROUP BY 
+		    DATENAME(WEEKDAY, Fecha_Produccion)
+		ORDER BY 
+		    Rendimiento_Harina_Pescado DESC;
 		</pre>
             </div>
     </div>
