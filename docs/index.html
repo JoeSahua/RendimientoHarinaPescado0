@@ -148,169 +148,169 @@
 		    <span class="education-date"> </span>
             	    <h4> </h4>
 		    <pre>
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [grupo03].[cliente](
-	[ID_Cliente] [int] IDENTITY(1,1) NOT NULL,
-	[Razon_Social] [varchar](400) NULL,
-	[RUC] [varchar](11) NULL,
-	[Direccion] [varchar](400) NULL,
-	[Email] [varchar](400) NULL,
-	[Telefono] [varchar](400) NULL,
- CONSTRAINT [pk_pucp_cliente] PRIMARY KEY CLUSTERED 
-(
-	[ID_Cliente] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [grupo03].[inventario]    Script Date: 25/08/2024 19:48:31 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [grupo03].[inventario](
-	[ID_Inventario] [int] IDENTITY(1,1) NOT NULL,
-	[Fecha_Inventario] [date] NULL,
-	[ID_Produccion] [int] NULL,
-	[ID_Venta] [int] NULL,
-	[Tipo_Operacion] [varchar](400) NULL,
-	[StockFinal] [float] NULL,
- CONSTRAINT [pk_pucp_inventario] PRIMARY KEY CLUSTERED 
-(
-	[ID_Inventario] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [grupo03].[materia_prima]    Script Date: 25/08/2024 19:48:31 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [grupo03].[materia_prima](
-	[ID_Materia_Prima] [int] IDENTITY(1,1) NOT NULL,
-	[Tipo_Especie] [varchar](400) NULL,
-	[Solidos_Especie] [float] NULL,
-	[Humedad_Especie] [float] NULL,
-	[Grasa_Especie] [float] NULL,
- CONSTRAINT [pk_pucp_materia_prima] PRIMARY KEY CLUSTERED 
-(
-	[ID_Materia_Prima] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [grupo03].[planta]    Script Date: 25/08/2024 19:48:31 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [grupo03].[planta](
-	[ID_Planta] [int] IDENTITY(1,1) NOT NULL,
-	[Nombre_Planta] [varchar](400) NULL,
-	[Ubicacion_Planta] [varchar](400) NULL,
-	[Capacidad_Diaria_Tramiento] [float] NULL,
-	[Estado_Planta] [int] NULL,
- CONSTRAINT [pk_pucp_planta] PRIMARY KEY CLUSTERED 
-(
-	[ID_Planta] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [grupo03].[produccion_diaria]    Script Date: 25/08/2024 19:48:31 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [grupo03].[produccion_diaria](
-	[ID_Produccion] [int] IDENTITY(1,1) NOT NULL,
-	[Fecha_Produccion] [date] NULL,
-	[ID_Planta] [int] NULL,
-	[Cantidad_Procesada] [float] NULL,
-	[Cantidad_Producida] [float] NULL,
-	[ID_Producto] [int] NULL,
-	[AnioTemp] [varchar](7) NULL,
- CONSTRAINT [pk_pucp_produccion_diaria] PRIMARY KEY CLUSTERED 
-(
-	[ID_Produccion] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [grupo03].[producto]    Script Date: 25/08/2024 19:48:31 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [grupo03].[producto](
-	[ID_Producto] [int] IDENTITY(1,1) NOT NULL,
-	[Nombre] [varchar](400) NULL,
-	[ID_Materia_Prima] [int] NULL,
-	[Proceso] [varchar](400) NULL,
-	[Precio_Tn] [float] NULL,
- CONSTRAINT [pk_pucp_producto] PRIMARY KEY CLUSTERED 
-(
-	[ID_Producto] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [grupo03].[venta]    Script Date: 25/08/2024 19:48:31 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [grupo03].[venta](
-	[ID_Venta] [int] IDENTITY(1,1) NOT NULL,
-	[Fecha_Venta] [date] NULL,
-	[Cantidad_Vendida] [float] NULL,
-	[ID_Cliente] [int] NULL,
-	[ID_Producto] [int] NULL,
-	[Precio_Final] [float] NULL,
-	[AnioTemp] [varchar](7) NULL,
- CONSTRAINT [pk_pucp_venta] PRIMARY KEY CLUSTERED 
-(
-	[ID_Venta] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-ALTER TABLE [grupo03].[inventario]  WITH CHECK ADD  CONSTRAINT [fk_pucp_inventario_pucp_produccion_diaria] FOREIGN KEY([ID_Produccion])
-REFERENCES [grupo03].[produccion_diaria] ([ID_Produccion])
-GO
-ALTER TABLE [grupo03].[inventario] CHECK CONSTRAINT [fk_pucp_inventario_pucp_produccion_diaria]
-GO
-ALTER TABLE [grupo03].[inventario]  WITH CHECK ADD  CONSTRAINT [fk_pucp_inventario_pucp_venta] FOREIGN KEY([ID_Venta])
-REFERENCES [grupo03].[venta] ([ID_Venta])
-GO
-ALTER TABLE [grupo03].[inventario] CHECK CONSTRAINT [fk_pucp_inventario_pucp_venta]
-GO
-ALTER TABLE [grupo03].[produccion_diaria]  WITH CHECK ADD  CONSTRAINT [fk_pucp_produccion_diaria_pucp_planta] FOREIGN KEY([ID_Planta])
-REFERENCES [grupo03].[planta] ([ID_Planta])
-GO
-ALTER TABLE [grupo03].[produccion_diaria] CHECK CONSTRAINT [fk_pucp_produccion_diaria_pucp_planta]
-GO
-ALTER TABLE [grupo03].[produccion_diaria]  WITH CHECK ADD  CONSTRAINT [fk_pucp_produccion_diaria_pucp_producto] FOREIGN KEY([ID_Producto])
-REFERENCES [grupo03].[producto] ([ID_Producto])
-GO
-ALTER TABLE [grupo03].[produccion_diaria] CHECK CONSTRAINT [fk_pucp_produccion_diaria_pucp_producto]
-GO
-ALTER TABLE [grupo03].[producto]  WITH CHECK ADD  CONSTRAINT [fk_pucp_producto_pucp_materia_prima] FOREIGN KEY([ID_Materia_Prima])
-REFERENCES [grupo03].[materia_prima] ([ID_Materia_Prima])
-GO
-ALTER TABLE [grupo03].[producto] CHECK CONSTRAINT [fk_pucp_producto_pucp_materia_prima]
-GO
-ALTER TABLE [grupo03].[venta]  WITH CHECK ADD  CONSTRAINT [fk_pucp_venta_pucp_cliente] FOREIGN KEY([ID_Cliente])
-REFERENCES [grupo03].[cliente] ([ID_Cliente])
-GO
-ALTER TABLE [grupo03].[venta] CHECK CONSTRAINT [fk_pucp_venta_pucp_cliente]
-GO
-ALTER TABLE [grupo03].[venta]  WITH CHECK ADD  CONSTRAINT [fk_pucp_venta_pucp_producto] FOREIGN KEY([ID_Producto])
-REFERENCES [grupo03].[producto] ([ID_Producto])
-GO
-ALTER TABLE [grupo03].[venta] CHECK CONSTRAINT [fk_pucp_venta_pucp_producto]
-GO
-ALTER TABLE [grupo03].[inventario]  WITH CHECK ADD  CONSTRAINT [chk_produccion_venta] CHECK  (([ID_Produccion] IS NOT NULL AND [ID_Venta] IS NULL OR [ID_Produccion] IS NULL AND [ID_Venta] IS NOT NULL))
-GO
-ALTER TABLE [grupo03].[inventario] CHECK CONSTRAINT [chk_produccion_venta]
-GO
+			SET ANSI_NULLS ON
+			GO
+			SET QUOTED_IDENTIFIER ON
+			GO
+			CREATE TABLE [grupo03].[cliente](
+				[ID_Cliente] [int] IDENTITY(1,1) NOT NULL,
+				[Razon_Social] [varchar](400) NULL,
+				[RUC] [varchar](11) NULL,
+				[Direccion] [varchar](400) NULL,
+				[Email] [varchar](400) NULL,
+				[Telefono] [varchar](400) NULL,
+			 CONSTRAINT [pk_pucp_cliente] PRIMARY KEY CLUSTERED 
+			(
+				[ID_Cliente] ASC
+			)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+			) ON [PRIMARY]
+			GO
+			/****** Object:  Table [grupo03].[inventario]    Script Date: 25/08/2024 19:48:31 ******/
+			SET ANSI_NULLS ON
+			GO
+			SET QUOTED_IDENTIFIER ON
+			GO
+			CREATE TABLE [grupo03].[inventario](
+				[ID_Inventario] [int] IDENTITY(1,1) NOT NULL,
+				[Fecha_Inventario] [date] NULL,
+				[ID_Produccion] [int] NULL,
+				[ID_Venta] [int] NULL,
+				[Tipo_Operacion] [varchar](400) NULL,
+				[StockFinal] [float] NULL,
+			 CONSTRAINT [pk_pucp_inventario] PRIMARY KEY CLUSTERED 
+			(
+				[ID_Inventario] ASC
+			)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+			) ON [PRIMARY]
+			GO
+			/****** Object:  Table [grupo03].[materia_prima]    Script Date: 25/08/2024 19:48:31 ******/
+			SET ANSI_NULLS ON
+			GO
+			SET QUOTED_IDENTIFIER ON
+			GO
+			CREATE TABLE [grupo03].[materia_prima](
+				[ID_Materia_Prima] [int] IDENTITY(1,1) NOT NULL,
+				[Tipo_Especie] [varchar](400) NULL,
+				[Solidos_Especie] [float] NULL,
+				[Humedad_Especie] [float] NULL,
+				[Grasa_Especie] [float] NULL,
+			 CONSTRAINT [pk_pucp_materia_prima] PRIMARY KEY CLUSTERED 
+			(
+				[ID_Materia_Prima] ASC
+			)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+			) ON [PRIMARY]
+			GO
+			/****** Object:  Table [grupo03].[planta]    Script Date: 25/08/2024 19:48:31 ******/
+			SET ANSI_NULLS ON
+			GO
+			SET QUOTED_IDENTIFIER ON
+			GO
+			CREATE TABLE [grupo03].[planta](
+				[ID_Planta] [int] IDENTITY(1,1) NOT NULL,
+				[Nombre_Planta] [varchar](400) NULL,
+				[Ubicacion_Planta] [varchar](400) NULL,
+				[Capacidad_Diaria_Tramiento] [float] NULL,
+				[Estado_Planta] [int] NULL,
+			 CONSTRAINT [pk_pucp_planta] PRIMARY KEY CLUSTERED 
+			(
+				[ID_Planta] ASC
+			)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+			) ON [PRIMARY]
+			GO
+			/****** Object:  Table [grupo03].[produccion_diaria]    Script Date: 25/08/2024 19:48:31 ******/
+			SET ANSI_NULLS ON
+			GO
+			SET QUOTED_IDENTIFIER ON
+			GO
+			CREATE TABLE [grupo03].[produccion_diaria](
+				[ID_Produccion] [int] IDENTITY(1,1) NOT NULL,
+				[Fecha_Produccion] [date] NULL,
+				[ID_Planta] [int] NULL,
+				[Cantidad_Procesada] [float] NULL,
+				[Cantidad_Producida] [float] NULL,
+				[ID_Producto] [int] NULL,
+				[AnioTemp] [varchar](7) NULL,
+			 CONSTRAINT [pk_pucp_produccion_diaria] PRIMARY KEY CLUSTERED 
+			(
+				[ID_Produccion] ASC
+			)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+			) ON [PRIMARY]
+			GO
+			/****** Object:  Table [grupo03].[producto]    Script Date: 25/08/2024 19:48:31 ******/
+			SET ANSI_NULLS ON
+			GO
+			SET QUOTED_IDENTIFIER ON
+			GO
+			CREATE TABLE [grupo03].[producto](
+				[ID_Producto] [int] IDENTITY(1,1) NOT NULL,
+				[Nombre] [varchar](400) NULL,
+				[ID_Materia_Prima] [int] NULL,
+				[Proceso] [varchar](400) NULL,
+				[Precio_Tn] [float] NULL,
+			 CONSTRAINT [pk_pucp_producto] PRIMARY KEY CLUSTERED 
+			(
+				[ID_Producto] ASC
+			)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+			) ON [PRIMARY]
+			GO
+			/****** Object:  Table [grupo03].[venta]    Script Date: 25/08/2024 19:48:31 ******/
+			SET ANSI_NULLS ON
+			GO
+			SET QUOTED_IDENTIFIER ON
+			GO
+			CREATE TABLE [grupo03].[venta](
+				[ID_Venta] [int] IDENTITY(1,1) NOT NULL,
+				[Fecha_Venta] [date] NULL,
+				[Cantidad_Vendida] [float] NULL,
+				[ID_Cliente] [int] NULL,
+				[ID_Producto] [int] NULL,
+				[Precio_Final] [float] NULL,
+				[AnioTemp] [varchar](7) NULL,
+			 CONSTRAINT [pk_pucp_venta] PRIMARY KEY CLUSTERED 
+			(
+				[ID_Venta] ASC
+			)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+			) ON [PRIMARY]
+			GO
+			ALTER TABLE [grupo03].[inventario]  WITH CHECK ADD  CONSTRAINT [fk_pucp_inventario_pucp_produccion_diaria] FOREIGN KEY([ID_Produccion])
+			REFERENCES [grupo03].[produccion_diaria] ([ID_Produccion])
+			GO
+			ALTER TABLE [grupo03].[inventario] CHECK CONSTRAINT [fk_pucp_inventario_pucp_produccion_diaria]
+			GO
+			ALTER TABLE [grupo03].[inventario]  WITH CHECK ADD  CONSTRAINT [fk_pucp_inventario_pucp_venta] FOREIGN KEY([ID_Venta])
+			REFERENCES [grupo03].[venta] ([ID_Venta])
+			GO
+			ALTER TABLE [grupo03].[inventario] CHECK CONSTRAINT [fk_pucp_inventario_pucp_venta]
+			GO
+			ALTER TABLE [grupo03].[produccion_diaria]  WITH CHECK ADD  CONSTRAINT [fk_pucp_produccion_diaria_pucp_planta] FOREIGN KEY([ID_Planta])
+			REFERENCES [grupo03].[planta] ([ID_Planta])
+			GO
+			ALTER TABLE [grupo03].[produccion_diaria] CHECK CONSTRAINT [fk_pucp_produccion_diaria_pucp_planta]
+			GO
+			ALTER TABLE [grupo03].[produccion_diaria]  WITH CHECK ADD  CONSTRAINT [fk_pucp_produccion_diaria_pucp_producto] FOREIGN KEY([ID_Producto])
+			REFERENCES [grupo03].[producto] ([ID_Producto])
+			GO
+			ALTER TABLE [grupo03].[produccion_diaria] CHECK CONSTRAINT [fk_pucp_produccion_diaria_pucp_producto]
+			GO
+			ALTER TABLE [grupo03].[producto]  WITH CHECK ADD  CONSTRAINT [fk_pucp_producto_pucp_materia_prima] FOREIGN KEY([ID_Materia_Prima])
+			REFERENCES [grupo03].[materia_prima] ([ID_Materia_Prima])
+			GO
+			ALTER TABLE [grupo03].[producto] CHECK CONSTRAINT [fk_pucp_producto_pucp_materia_prima]
+			GO
+			ALTER TABLE [grupo03].[venta]  WITH CHECK ADD  CONSTRAINT [fk_pucp_venta_pucp_cliente] FOREIGN KEY([ID_Cliente])
+			REFERENCES [grupo03].[cliente] ([ID_Cliente])
+			GO
+			ALTER TABLE [grupo03].[venta] CHECK CONSTRAINT [fk_pucp_venta_pucp_cliente]
+			GO
+			ALTER TABLE [grupo03].[venta]  WITH CHECK ADD  CONSTRAINT [fk_pucp_venta_pucp_producto] FOREIGN KEY([ID_Producto])
+			REFERENCES [grupo03].[producto] ([ID_Producto])
+			GO
+			ALTER TABLE [grupo03].[venta] CHECK CONSTRAINT [fk_pucp_venta_pucp_producto]
+			GO
+			ALTER TABLE [grupo03].[inventario]  WITH CHECK ADD  CONSTRAINT [chk_produccion_venta] CHECK  (([ID_Produccion] IS NOT NULL AND [ID_Venta] IS NULL OR [ID_Produccion] IS NULL AND [ID_Venta] IS NOT NULL))
+			GO
+			ALTER TABLE [grupo03].[inventario] CHECK CONSTRAINT [chk_produccion_venta]
+			GO
 		</pre>
             </div>
 	</div>
@@ -319,6 +319,11 @@ GO
 
     <div id="considerations" class="background-alt">
         <h2 class="heading">Consideraciones</h2>
+	    <h3>Power BI</h3>
+                        <p>
+                            Para gestionar los datos de tipo Fecha, se creó una Tabla Tiempo que permitió ajustar los períodos de análisis al construir las visualizaciones. Dado que el negocio se mide por temporadas, se incluyó una columna para clasificar las temporadas dentro de un año, lo cual fue un aspecto clave para utilizar selectores y responder las diferentes preguntas. Se adjunta el código en el archivo TablaTiempo.txt.
+                            <img src="images/PBIconsiderations.jpg"/>
+			</p>
         <div class="container">
             <div class="row">
                 <div class="project shadow-large">
