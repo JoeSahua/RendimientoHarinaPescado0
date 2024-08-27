@@ -799,22 +799,27 @@
 		<span class="education-date"> </span>
             	<h4> </h4>
 		<pre>
-	DECLARE @rendimientoP2_2024 DECIMAL(12, 3);
-
-	SET @rendimientoP2_2024 = (
-	    SELECT
-	        convert(decimal(12,3), sum(convert(decimal(12,4),cantidad_producida)) / sum(convert(decimal(12,4),cantidad_procesada)) * 100) AS rendimientoP1_2024
-	    FROM 
-	        [grupo03].[produccion_diaria]
-	    WHERE 
-	        ID_Producto=2 
-	    AND 
-	        YEAR(Fecha_Produccion) = 2024 
-	);
-	PRINT 'Indicador Harina de Pescado P2: ' + cast(@rendimientoP2_2024 AS VARCHAR(10));
+	SELECT 
+	    CASE 
+	        WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Sunday' THEN '01-domingo'
+	        WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Monday' THEN '02-lunes'
+	        WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Tuesday' THEN '03-martes'
+	        WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Wednesday' THEN '04-miercoles'
+	        WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Thursday' THEN '05-jueves'
+	        WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Friday' THEN '06-viernes'
+	        WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Saturday' THEN '07-sábado'
+	    END AS Dia_Semana,
 	
-	PRINT 'Diferencia: ' + cast(convert(decimal(12,2),(@rendimientoP2_2024 - @rendimientoP1_2024)) AS VARCHAR(10)) +'%'
-
+	    convert(decimal(12,2),SUM(CASE WHEN AnioTemp = '2023-T2' THEN CONVERT(DECIMAL(12, 4), cantidad_producida) ELSE 0 END) / 
+	                SUM(CASE WHEN AnioTemp = '2023-T2' THEN CONVERT(DECIMAL(12, 4), cantidad_procesada) ELSE 0 END)*100) AS Rendimiento_Harina_Pescado_2023_T2,
+	        convert(decimal(12,2),SUM(CASE WHEN AnioTemp = '2024-T2' THEN CONVERT(DECIMAL(12, 4), cantidad_producida) ELSE 0 END)/ 
+	                SUM(CASE WHEN AnioTemp = '2024-T2' THEN CONVERT(DECIMAL(12, 4), cantidad_procesada) ELSE 0 END)*100) AS Rendimiento_Harina_Pescado_2024_T2
+	FROM 
+	        [grupo03].[produccion_diaria]
+	GROUP BY 
+	        DATENAME(WEEKDAY, Fecha_Produccion)
+	ORDER BY 
+	        Dia_Semana;
 
 		</pre>
             </div>
