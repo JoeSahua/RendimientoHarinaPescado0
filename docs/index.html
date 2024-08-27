@@ -389,54 +389,46 @@
 		    Rendimiento_Harina_Pescado DESC;
 		</pre>
             </div>
-    </div>
 
-    <div id="skills">
-        <h2 class="heading">Skills</h2>
-        <ul>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>Ruby</li>
-            <li>Go</li>
-            <li>Node.js</li>
-            <li>AngularJs</li>
-            <li>React</li>
-            <li>Elixir</li>
-            <li>Java</li>
-            <li>C</li>
-            <li>C#</li>
-            <li>C++</li>
-            <li>Ruby on Rails</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>Ruby</li>
-            <li>Go</li>
-            <li>Node.js</li>
-            <li>AngularJs</li>
-            <li>React</li>
-            <li>Elixir</li>
-            <li>Java</li>
-            <li>C</li>
-            <li>C#</li>
-            <li>C++</li>
-            <li>Ruby on Rails</li>
-        </ul>
-    </div>
-    <!-- End #skills -->
 
-    <div id="contact">
-        <h2>Get in Touch</h2>
-        <div id="contact-form">
-            <form method="POST" action="https://formspree.io/email@email.com">
-                <input type="hidden" name="_subject" value="Contact request from personal website" />
-                <input type="email" name="_replyto" placeholder="Your email" required>
-                <textarea name="message" placeholder="Your message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-        <!-- End #contact-form -->
+
+	    <div class="container">
+		<div class="row">
+			<h3>Pregunta 2</h3>
+		</div>
+	</div>
+        <div class="container">
+            <div class="row">
+		<img img src="https://github.com/user-attachments/assets/4767631f-6f13-4ad5-baae-71b6c3a2cd99" alt="Pregunta 2">
+	    </div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<p>La pregunta número 2 tiene como objetivo obtener una lista de los diez mejores días de producción para identificar y clasificar los días más destacados. Utilizamos 
+        una tabla que lo ordenamos de manera decreciente porque las diferencias entre los valores no eran tan notoria, así como colores de diversa intensidad.</p>
+		</div>
+	</div>
+	<div class="education-block">
+		<h3>Consulta en SQL</h3>
+		<span class="education-date"> </span>
+            	<h4> </h4>
+		<pre>
+	SELECT TOP 10
+	    CONVERT(VARCHAR(10), Fecha_Produccion, 103) AS Fecha_Produccion,
+	    convert(decimal(12,3), sum(convert(decimal(12,4),cantidad_producida)) / sum(convert(decimal(12,4),cantidad_procesada)) * 100) AS Rendimiento_Harina_Pescado
+	FROM 
+	    [grupo03].[produccion_diaria]
+	WHERE 
+	    YEAR(Fecha_Produccion) = 2023
+	GROUP BY 
+	    Fecha_Produccion
+	ORDER BY 
+	    Rendimiento_Harina_Pescado DESC;
+		</pre>
+            </div>
+
+	    
     </div>
-    <!-- End #contact -->
 
     <footer>
         <div class="container">
