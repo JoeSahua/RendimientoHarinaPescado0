@@ -427,6 +427,157 @@
 		</pre>
             </div>
 
+
+
+
+	    <div class="container">
+		<div class="row">
+			<h3>Pregunta 3</h3>
+		</div>
+	</div>
+        <div class="container">
+            <div class="row">
+		<img src="https://github.com/user-attachments/assets/cf43cbb2-4f38-4f18-aade-afda08bcd02a" alt="Pregunta 2">
+	    </div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<p>La pregunta número 3 tiene como objetivo determinar el promedio del índice diario de producción de harina de pescado obtenido durante las temporadas 2023-T1, 2023-T2 y 2024-T1. 
+        Este análisis es crucial para evaluar si el rendimiento de la producción se encuentra dentro de los niveles esperados o si hay una disminución significativa que pueda requerir 
+        acciones correctivas. Utilizamos una tabla que presenta los rendimientos de cada una de las temporadas seleccionadas, junto con una tarjeta que muestra el promedio general de las mismas.</p>
+		</div>
+	</div>
+	<div class="education-block">
+		<h3>Consulta en SQL</h3>
+		<span class="education-date"> </span>
+            	<h4> </h4>
+		<pre>
+	SELECT 
+	    convert(decimal(12,3),AVG(Rendimiento_Harina_Pescado)) AS Indicador_Rendimiento
+	FROM (
+	    SELECT 
+	        AnioTemp AS Temporada, 
+	        convert(decimal(12,3), sum(convert(decimal(12,4), cantidad_producida)) / sum(convert(decimal(12,4), cantidad_procesada)) * 100) AS Rendimiento_Harina_Pescado
+	    FROM 
+	        grupo03.produccion_diaria
+	    WHERE
+	        AnioTemp <> '2024-T2'
+	    GROUP BY 
+	        AnioTemp
+	) AS Subquery;
+		</pre>
+            </div>
+
+
+
+
+	    <div class="container">
+		<div class="row">
+			<h3>Pregunta 4</h3>
+		</div>
+	</div>
+        <div class="container">
+            <div class="row">
+		<img src="https://github.com/user-attachments/assets/c5085394-c857-4e3a-a77f-41b7f464a70f" alt="Pregunta 4">
+	    </div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<p>La pregunta número 4 busca identificar cuál fue el mes del año 2023 con el mayor índice diario de rendimiento de producción de harina de pescado. Este tipo de análisis es importante para 
+        entender en qué momento del año se alcanzan los mejores niveles de eficiencia en la producción. Para responder a la pregunta, se utilizó una visualización que incluye una tabla de meses 
+        y porcentaje de rendimiento para cada mes, destacando que el rendimiento más alto se registró en octubre con un 23.004%.</p>
+		</div>
+	</div>
+	<div class="education-block">
+		<h3>Consulta en SQL</h3>
+		<span class="education-date"> </span>
+            	<h4> </h4>
+		<pre>
+	SELECT TOP 12
+	    CASE 
+	        WHEN DATENAME(MONTH, Fecha_Produccion) = 'January' THEN '01-enero'
+	                WHEN DATENAME(MONTH, Fecha_Produccion) = 'February' THEN '02-febrero'
+	                WHEN DATENAME(MONTH, Fecha_Produccion) = 'March' THEN '03-marzo'
+	                WHEN DATENAME(MONTH, Fecha_Produccion) = 'April' THEN '04-abril'
+	                WHEN DATENAME(MONTH, Fecha_Produccion) = 'May' THEN '05-mayo'
+	                WHEN DATENAME(MONTH, Fecha_Produccion) = 'June' THEN '06-junio'
+	                WHEN DATENAME(MONTH, Fecha_Produccion) = 'July' THEN '07-julio'
+	                WHEN DATENAME(MONTH, Fecha_Produccion) = 'August' THEN '08-agosto'
+	                WHEN DATENAME(MONTH, Fecha_Produccion) = 'September' THEN '09-septiembre'
+	                WHEN DATENAME(MONTH, Fecha_Produccion) = 'October' THEN '10-octubre'
+	                WHEN DATENAME(MONTH, Fecha_Produccion) = 'November' THEN '11-noviembre'
+	                WHEN DATENAME(MONTH, Fecha_Produccion) = 'December' THEN '12-diciembre'
+	    END AS Mes,
+	    convert(decimal(12,3), sum(convert(decimal(12,4),cantidad_producida)) / sum(convert(decimal(12,4),cantidad_procesada)) * 100) AS Rendimiento_Harina_Pescado
+	FROM 
+	    [grupo03].[produccion_diaria]
+	WHERE 
+	        YEAR(Fecha_Produccion) = 2023 
+	GROUP BY 
+	    DATENAME(YEAR, fecha_produccion),
+	    DATENAME(MONTH, fecha_produccion),
+	    DATEPART(YEAR, fecha_produccion),
+	    DATEPART(MONTH, fecha_produccion)        
+	ORDER BY 
+	    Rendimiento_Harina_Pescado DESC;
+
+		</pre>
+            </div>
+
+
+
+
+	<div class="container">
+		<div class="row">
+			<h3>Pregunta 5</h3>
+		</div>
+	</div>
+        <div class="container">
+            <div class="row">
+		<img src="https://github.com/user-attachments/assets/4cb26bc5-4c1c-4f65-96a2-49b3f8ad038e" alt="Pregunta 5">
+	    </div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<p>La pregunta número 5 tiene como objetivo analizar el comportamiento entre temporadas del indicador de rendimiento de harina de pescado para la temporada 2023-1 y 2024 -1. Para responder 
+        a esta pregunta optamos por un grafico de tabla ordenado de manera decreciente para facilitar el análisis de los datos, además de una tarjeta para facilitar la visibilidad de la diferencia 
+        entre ambas temporadas.</p>
+		</div>
+	</div>
+	<div class="education-block">
+		<h3>Consulta en SQL</h3>
+		<span class="education-date"> </span>
+            	<h4> </h4>
+		<pre>
+	DECLARE @rendimiento2023T1 DECIMAL(12, 3);
+	        SET @rendimiento2023T1 = (
+	                SELECT
+	                        convert(decimal(12,3), sum(convert(decimal(12,4),cantidad_producida)) / sum(convert(decimal(12,4),cantidad_procesada)) * 100) AS Rendimiento_Harina_Pescado
+	                FROM 
+	                        [grupo03].[produccion_diaria]
+	                WHERE 
+	        AnioTemp = '2023-T1' 
+	        );
+	        DECLARE @rendimiento2024T1 DECIMAL(12, 3);
+	        SET @rendimiento2024T1 = (
+	                SELECT
+	                        convert(decimal(12,3), sum(convert(decimal(12,4),cantidad_producida)) / sum(convert(decimal(12,4),cantidad_procesada)) * 100) AS Rendimiento_Harina_Pescado
+	                FROM 
+	                        [grupo03].[produccion_diaria]
+	                WHERE 
+	        AnioTemp = '2024-T1' 
+	        );
+	
+	        PRINT 'Indicador_Rendimiento 2023-T1: ' + CAST(@rendimiento2023T1 AS VARCHAR(10)) + '%';
+	        PRINT 'Indicador_Rendimiento 2024-T1: ' + CAST(@rendimiento2024T1 AS VARCHAR(10)) + '%';
+	        PRINT 'Diferencia 2023-2024: ' + CAST(@rendimiento2024T1 - @rendimiento2023T1 AS VARCHAR(10)) + '%';
+
+		</pre>
+            </div>
+
+
+
+
 	    
     </div>
 
