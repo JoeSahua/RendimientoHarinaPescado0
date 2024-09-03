@@ -712,21 +712,6 @@
 	    [grupo03].[planta] pl ON rd.ID_Planta = pl.ID_Planta
 	GROUP BY 
 	    pl.Nombre_Planta;
-	
-	DECLARE @rendimientoP1_2024 DECIMAL(12, 3);
-	
-	SET @rendimientoP1_2024 = (
-	    SELECT
-	        convert(decimal(12,3), sum(convert(decimal(12,4),cantidad_producida)) / sum(convert(decimal(12,4),cantidad_procesada)) * 100) AS rendimientoP1_2024
-	    FROM 
-	        [grupo03].[produccion_diaria]
-	    WHERE 
-	        ID_Producto=1 
-	    AND 
-	        YEAR(Fecha_Produccion) = 2024 
-	);
-	
-	PRINT 'Indicador Harina de Pescado: ' + cast(@rendimientoP1_2024 AS VARCHAR(10));
 
 		</pre>
             </div>
@@ -759,6 +744,21 @@
 		<span class="education-date"> </span>
             	<h4> </h4>
 		<pre>
+	DECLARE @rendimientoP1_2024 DECIMAL(12, 3);
+	
+	SET @rendimientoP1_2024 = (
+	    SELECT
+	        convert(decimal(12,3), sum(convert(decimal(12,4),cantidad_producida)) / sum(convert(decimal(12,4),cantidad_procesada)) * 100) AS rendimientoP1_2024
+	    FROM 
+	        [grupo03].[produccion_diaria]
+	    WHERE 
+	        ID_Producto=1 
+	    AND 
+	        YEAR(Fecha_Produccion) = 2024 
+	);
+	
+	PRINT 'Indicador Harina de Pescado: ' + cast(@rendimientoP1_2024 AS VARCHAR(10));
+			
 	DECLARE @rendimientoP2_2024 DECIMAL(12, 3);
 
 	SET @rendimientoP2_2024 = (
