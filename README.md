@@ -78,7 +78,7 @@ Para responder esta pregunta elegimos un grafico de tabla ordenada de manera dec
 facilita determinar cual de las plantas mencionadas cuenta con un mayor indicador para el 2023.
 
 ## **PREGUNTA 7** 
-![image](https://github.com/user-attachments/assets/5785a1dd-264d-496b-94be-b580d40563d7)
+![image](https://github.com/user-attachments/assets/81af393b-79a5-4104-b92e-a11ffe449382)
 
 
 La pregunta 7 tiene como finalidad mostrar los clientes a los que más toneladas de harina de pescado se vende, esto don el objetivo de identificar a los clientes más valiosos o rentables, permitiendo enfocar estrategias comerciales y de fidelización en estos.
