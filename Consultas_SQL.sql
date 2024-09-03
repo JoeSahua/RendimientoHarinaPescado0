@@ -1,6 +1,6 @@
 --PREGUNTA 1
---¿Qué día de la semana (lunes-domingo) de la temporada 2024-T1 (Abril-Junio del 2024) tuvo mayor 
---índice diario de rendimiento de producción de harina de pescado?
+--Â¿QuÃ© dÃ­a de la semana (lunes-domingo) de la temporada 2024-T1 (Abril-Junio del 2024) tuvo mayor 
+--Ã­ndice diario de rendimiento de producciÃ³n de harina de pescado?
 SELECT 
     CASE 
         WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Sunday' THEN '01-domingo'
@@ -9,7 +9,7 @@ SELECT
         WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Wednesday' THEN '04-miercoles'
         WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Thursday' THEN '05-jueves'
         WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Friday' THEN '06-viernes'
-        WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Saturday' THEN '07-sábado'
+        WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Saturday' THEN '07-sÃ¡bado'
     END AS Dia_Semana,
     convert(decimal(12,3), sum(convert(decimal(12,4),cantidad_producida)) / sum(convert(decimal(12,4),cantidad_procesada)) * 100) AS Rendimiento_Harina_Pescado
 FROM 
@@ -22,8 +22,8 @@ ORDER BY
     Rendimiento_Harina_Pescado DESC;
 
 --PREGUNTA 2
---¿Cuál es el top 10 de fechas (día-mes-año) en los que se obtuvo mayor y menor índice diario de rendimiento de 
---producción de harina de pescado durante el 2023?
+--Â¿CuÃ¡l es el top 10 de fechas (dÃ­a-mes-aÃ±o) en los que se obtuvo mayor y menor Ã­ndice diario de rendimiento de 
+--producciÃ³n de harina de pescado durante el 2023?
 SELECT TOP 10
     CONVERT(VARCHAR(10), Fecha_Produccion, 103) AS Fecha_Produccion,
     convert(decimal(12,3), sum(convert(decimal(12,4),cantidad_producida)) / sum(convert(decimal(12,4),cantidad_procesada)) * 100) AS Rendimiento_Harina_Pescado
@@ -37,7 +37,7 @@ ORDER BY
     Rendimiento_Harina_Pescado DESC;
 
 --PREGUNTA 3
---¿Cuál es el promedio de índice diario de producción de harina de pescado obtenido durante la 
+--Â¿CuÃ¡l es el promedio de Ã­ndice diario de producciÃ³n de harina de pescado obtenido durante la 
 --temporada 2023-T1, 2023-T2 y 2024-T1?
 SELECT 
     convert(decimal(12,3),AVG(Rendimiento_Harina_Pescado)) AS Indicador_Rendimiento
@@ -54,7 +54,7 @@ FROM (
 ) AS Subquery;
 
 --PREGUNTA 4
---¿Qué mes del 2023 tuvo mayor índice diario de rendimiento de producción de harina de pescado?
+--Â¿QuÃ© mes del 2023 tuvo mayor Ã­ndice diario de rendimiento de producciÃ³n de harina de pescado?
 SELECT TOP 12
     CASE 
         WHEN DATENAME(MONTH, Fecha_Produccion) = 'January' THEN '01-enero'
@@ -84,7 +84,7 @@ ORDER BY
     Rendimiento_Harina_Pescado DESC;
 
 --PREGUNTA 5
---¿En cuánto varió el índice diario de producción de harina de pescado entre la temporada 1 del 2023 y 
+--Â¿En cuÃ¡nto variÃ³ el Ã­ndice diario de producciÃ³n de harina de pescado entre la temporada 1 del 2023 y 
 --la temporada 1 del 2024?
 DECLARE @rendimiento2023T1 DECIMAL(12, 3);
         SET @rendimiento2023T1 = (
@@ -110,7 +110,7 @@ DECLARE @rendimiento2023T1 DECIMAL(12, 3);
         PRINT 'Diferencia 2023-2024: ' + CAST(@rendimiento2024T1 - @rendimiento2023T1 AS VARCHAR(10)) + '%';
 
 --PREGUNTA 6
---Qué planta tuvo mayor índice diario de rendimiento de producción de harina de pescado durante el 2023?
+--QuÃ© planta tuvo mayor Ã­ndice diario de rendimiento de producciÃ³n de harina de pescado durante el 2023?
 SELECT 
     p.Nombre_Planta AS Plamta,
     convert(decimal(12,3), sum(convert(decimal(12,4),cantidad_producida)) / sum(convert(decimal(12,4),cantidad_procesada)) * 100) AS Rendimiento_Harina_Pescado
@@ -126,7 +126,7 @@ ORDER BY
     Rendimiento_Harina_Pescado DESC;
 
 --PREGUNTA 7
---¿Cuál es el TOP 5 de clientes a los que se les vendió mayor cantidad de toneladas de harina de pescado 
+--Â¿CuÃ¡l es el TOP 5 de clientes a los que se les vendiÃ³ mayor cantidad de toneladas de harina de pescado 
 --durante la temporada 1 (Abril- Junio) del 2024?
 SELECT TOP 5
     c.Razon_Social AS Nombre_Cliente,
@@ -143,7 +143,7 @@ ORDER BY
     Total_Toneladas_Vendidas DESC
 
 --PREGUNTA 8
---¿Qué porcentaje del total de días de producción del 2023 no sobrepasó el mínimo esperado de indicador de 
+--Â¿QuÃ© porcentaje del total de dÃ­as de producciÃ³n del 2023 no sobrepasÃ³ el mÃ­nimo esperado de indicador de 
 --rendimiento (23.5%) separado por planta?
 WITH rendimiento AS (
     SELECT 
@@ -169,6 +169,10 @@ JOIN
 GROUP BY 
     pl.Nombre_Planta;
 
+--PREGUNTA 9
+--En promedio, Â¿en cuÃ¡nto porcentaje difieren los indicadores de rendimiento del producto "Harina de pescado" y 
+--"Harina de Pescado P2" durante el 2024?
+
 DECLARE @rendimientoP1_2024 DECIMAL(12, 3);
 
 SET @rendimientoP1_2024 = (
@@ -184,9 +188,6 @@ SET @rendimientoP1_2024 = (
 
 PRINT 'Indicador Harina de Pescado: ' + cast(@rendimientoP1_2024 AS VARCHAR(10));
 
---PREGUNTA 9
---En promedio, ¿en cuánto porcentaje difieren los indicadores de rendimiento del producto "Harina de pescado" y 
---"Harina de Pescado P2" durante el 2024?
 DECLARE @rendimientoP2_2024 DECIMAL(12, 3);
 
 SET @rendimientoP2_2024 = (
@@ -204,7 +205,7 @@ PRINT 'Indicador Harina de Pescado P2: ' + cast(@rendimientoP2_2024 AS VARCHAR(1
 PRINT 'Diferencia: ' + cast(convert(decimal(12,2),(@rendimientoP2_2024 - @rendimientoP1_2024)) AS VARCHAR(10)) +'%'
 
 --PREGUNTA 10
---¿Cuál es la tendencia del índice diario de producción diaria a lo largo de 1 semana (Lunes - Viernes) durante el 2023-T2 comparado a 2024-T2?
+--Â¿CuÃ¡l es la tendencia del Ã­ndice diario de producciÃ³n diaria a lo largo de 1 semana (Lunes - Viernes) durante el 2023-T2 comparado a 2024-T2?
 SELECT 
     CASE 
         WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Sunday' THEN '01-domingo'
@@ -213,7 +214,7 @@ SELECT
         WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Wednesday' THEN '04-miercoles'
         WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Thursday' THEN '05-jueves'
         WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Friday' THEN '06-viernes'
-        WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Saturday' THEN '07-sábado'
+        WHEN DATENAME(WEEKDAY, Fecha_Produccion) = 'Saturday' THEN '07-sÃ¡bado'
     END AS Dia_Semana,
 
     convert(decimal(12,2),SUM(CASE WHEN AnioTemp = '2023-T2' THEN CONVERT(DECIMAL(12, 4), cantidad_producida) ELSE 0 END) / 
